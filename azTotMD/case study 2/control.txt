@@ -1,0 +1,50 @@
+timestep 0.001 ps
+nstep 2000
+nequil  1000 
+eqfreq 100
+temperature 298.0
+
+permittivity  1.0 
+//this is e in 1/(4pi * e *e0)
+
+// cell list:
+
+cell_list	1
+max_neigh	155
+
+
+// EWALDS:
+alpha   0.1
+kx	5
+ky	5
+kz	5
+rkcut2	27  // нет необходимости, он вычисляется
+rReal	9.0
+
+
+// THERMOSTAT
+nvt 		1
+tautemp		0.02
+gaussian	0
+
+
+//RDF OUTPUT
+maxRDF		10.0   // maximum RDF distance output
+dRDF		0.05  // width of RDF step
+frRDF		20
+
+// e transfer
+eJump		0
+
+//bonding
+bonding 3.5
+
+
+// external field
+Ux		0.0
+
+//OUTPUT
+hist		200
+revcon		100000
+stat		200
+
